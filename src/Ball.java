@@ -1,22 +1,38 @@
+import processing.core.PApplet;
+import java.util.Random;
+
 public class Ball {
-    static Fenster window;
+    Random random = new Random();
+    public Fenster window;
     double xPos;
     double yPos;
     double diameter;
     int color;
     double speed;
-    double accel;
+    double accel = 98.1;
 
     Ball(Fenster iWindow, double inputPositionX, double inputPositionY, double iDiameter, int iColor, double iSpeed) {
-        iWindow = window;
-        inputPositionX = xPos;
-        inputPositionY = yPos;
-        iDiameter = diameter;
-        iColor = color;
-        iSpeed = speed;
+        window = iWindow;
+        xPos = inputPositionX;
+        yPos = inputPositionY;
+        diameter = iDiameter;
+        color = iColor;
+        speed = iSpeed;
     }
 
-    static void male() {
-        window.circle(100.0f, 100.0f, 50);
+    Ball(PApplet window) {
+        new Ball(window , random.nextInt(801), random.nextInt(801), random.nextInt(101) + 100, random.nextInt(256), 0);
+    }
+
+    void male() {
+        window.circle((float) xPos, (float) yPos, (float) diameter);
+    }
+
+    public void move(double t) {
+        speed = speed + accel * t / window.frameRate;
+        yPos = yPos + speed * t;
+        if (yPos >= window.height - diameter / 2) {
+            speed = -speed;
+        }
     }
 }
