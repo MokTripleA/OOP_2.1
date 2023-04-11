@@ -1,13 +1,15 @@
 import processing.core.PApplet;
+
 import java.util.Random;
 
 public class Fenster extends PApplet {
-    private Ball Ball;
+    Ball Ball;
+    Random random = new Random();
 
     @Override
     public void settings() {
         size(800, 800);
-        Ball = new Ball(this, 400, 400, 50, 50, 0);
+        Ball = new Ball(this);
     }
 
     @Override

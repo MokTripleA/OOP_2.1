@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+
 import java.util.Random;
 
 public class Ball {
@@ -21,7 +22,6 @@ public class Ball {
     }
 
     Ball(PApplet window) {
-        new Ball(window , random.nextInt(801), random.nextInt(801), random.nextInt(101) + 100, random.nextInt(256), 0);
     }
 
     void male() {
