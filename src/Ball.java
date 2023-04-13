@@ -22,6 +22,9 @@ public class Ball {
     }
 
     Ball(PApplet window) {
+        xPos = random.nextInt(window.width) + 1;
+        yPos = random.nextInt(window.height) + 1;
+        diameter = random.nextInt(100) + 100;
     }
 
     void male() {
@@ -33,6 +36,7 @@ public class Ball {
         yPos = yPos + speed * t;
         if (yPos >= window.height - diameter / 2) {
             speed = -speed;
+            yPos = yPos + speed * t;
         }
     }
 }
