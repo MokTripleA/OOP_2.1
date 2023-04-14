@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Ball {
     Random random = new Random();
-    private Fenster window;
+    private PApplet window;
     private double xPos;
     private double yPos;
     private double diameter;
@@ -27,7 +27,7 @@ public class Ball {
     }
 
     Ball(PApplet window) {
-        this.window = (Fenster) window;
+        this.window = window;
         xPos = window.random(200, 600);
         yPos = window.random(200, 600);
         diameter = window.random(100, 200);
