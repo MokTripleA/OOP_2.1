@@ -28,8 +28,8 @@ public class Ball {
 
     Ball(PApplet window) {
         this.window = (Fenster) window;
-        xPos = window.random((float) (0 + diameter / 2), (float) (window.width - diameter / 2));
-        yPos = window.random((float) (0 + diameter / 2), (float) (window.width - diameter / 2));
+        xPos = window.random(200, 600);
+        yPos = window.random(200, 600);
         diameter = window.random(100, 200);
         color_1 = (int) window.random(255);
         color_2 = (int) window.random(255);

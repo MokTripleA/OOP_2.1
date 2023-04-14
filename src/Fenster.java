@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Fenster extends PApplet {
     Random random = new Random();
-    Ball[] Ball = new Ball[random.nextInt(100)];
+    Ball[] Ball = new Ball[50];
 
     @Override
     public void settings() {
